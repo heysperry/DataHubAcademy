@@ -19,10 +19,8 @@
         }
 		
 	
-body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+body {
     background-image: url("https://wallpaper.dog/large/20476893.jpg"); /* Correct way to set the background image */
     background-size: cover; /* Cover the entire viewport */
     background-repeat: no-repeat; /* Prevent the image from repeating */
@@ -198,11 +196,14 @@ a{
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
-    gap: 0px; /* Space between cards */
+    gap: 20px; /* Space between cards */
     padding: 20px; /* Padding around the container */
     justify-content: center; /* Center the grid as a whole */
+	align-items: center;
     max-width: 1200px; /* Optional: Set a max width for the container */
-    margin: 0 auto; /* Center the container itself */
+    margin: 200px; /* Center the container itself */
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
 .card {
     background-color: rgba(249, 249, 249, 0.2); /* Adjust the alpha value as needed */
@@ -210,9 +211,9 @@ a{
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    text-align: left;
+    text-align: center;
     transition: transform 0.2s;
-    height: 250px;
+    height: 300px;
 }
 
 .card-image {
@@ -449,7 +450,7 @@ a{
 </center>
 
 <center><br><br><br>
-  <a class="courses-link" href="#">Discover more</a>
+  <a class="courses-link" href="Limited.html">Discover more</a>
     </section>
 
     <div class="flex-col">
@@ -529,7 +530,7 @@ a{
         <img src="LOGO.png" height="70px" class="logo" />
       </div>
      
-    
+    </div>
       <div class="copy">&copy;DataHub Academy Team</div>
  
     </footer>
