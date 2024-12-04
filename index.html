@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Homepage</title>
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+ 
+    <style>
+	 /* Hide scrollbar for WebKit browsers */
+        ::-webkit-scrollbar {
+            display: none; /* Hide the scrollbar */
+        }
+
+        /* Hide scrollbar for Firefox */
+        html {
+            scrollbar-width: none; /* Options: auto, thin, none */
+        }
+		
+	
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("https://wallpaper.dog/large/20476893.jpg"); /* Correct way to set the background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image */
+    height: 100vh; /* Make sure the body takes up the full viewport height */
+}
+        header {
+		
+	background:transparent;
+    color: #ffffff; /* Change text color to white for better contrast */
+    padding: 10px 20px; /* Added padding for better spacing */
+    width: 100%;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    position: fixed; /* Fixed position */
+    top: 0; /* Position at the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    backdrop-filter: blur(10px); /* Blur effect for the background */
+}
+	
+#nav {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  align-items: center;
+  padding: 10px;
+  margin-right: 69px; /* Add space on the right */
+  background: transparent;
+  color: #fff;
+  width: calc(95% - 20px); /* Adjust width to account for the margin */
+  box-sizing: border-box; /* Include padding and margin in the box size */
+}
+
+ul{
+    display: flex;
+
+}
+li{
+    list-style: none;
+}
+a{
+    padding:16px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    transition:background .5s ease-in-out;
+}
+.tab:hover{
+    color: #fff;
+   background: rgba(3, 252, 244, 0.651); /* Neon blue with opacity */
+    transition: background 0.2s;
+}
+
+.button {
+		margin-left: 15px;
+    display: inline-block; /* Makes the link behave like a block element */
+    padding: 10px 10px; /* Adds padding inside the button */
+    font-size: 16px; /* Sets the font size */
+    color: white; /* Text color */
+    background-color: red; /* Button background color */
+    text-decoration: none; /* Removes underline from the link */
+    border-radius: 5px; /* Rounds the corners of the button */
+    transition: background-color 0.3s; /* Adds a transition effect */
+}
+
+.button:hover {
+    background-color: #03fcf4; /* Changes background color on hover */
+}
+
+.transition-text {
+    transition: color 0.5s ease, transform 0.5s ease; /* Transition for color and transform */
+}
+
+.transition-text:hover {
+    color: #FFD700; /* Change color on hover (gold in this case) */
+    transform: scale(1.05); /* Slightly increase the size on hover */
+}
+
+        .container {
+            width: 100%;
+            margin: auto;
+            overflow: hidden;
+			
+        }
+        main {
+            /*background: linear-gradient(to bottom, #191970, #00008B, #4169E1);*/
+			background: transparent;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            display: flex; /* Use flexbox for columns */
+            justify-content: space-between; /* Space between columns */
+        }
+        .column {
+            flex: 1; /* Each column takes up equal space */
+			margin-left:70px;
+    padding-left: 40px; /* Padding inside columns */
+    box-sizing: border-box; /* Include padding in width calculations */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: flex-start; /* Align items to the start (top) */
+    text-align: left; /* Align text to the left */
+	font-family:MyFont;
+}
+        .column img {
+            width: 90%; /* Make the image responsive */
+            height: 600px; /* Maintain aspect ratio */
+            border-radius: 5px; /* Optional: rounded corners */
+        }
+		
+		.bouncing-image {
+  position: relative;
+  animation: animate 2s alternate infinite;
+}
+        @keyframes animate {
+  from {
+    bottom: 0;
+  }
+  to {
+    bottom: 20px;
+  }
+}
+		
+
+.background-video {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    z-index: -1; 
+}
+
+
+<!-- CSS for Slideshow -->
+
+.slideshow-container {
+    position: relative;
+    max-width: 600px; /* Set a max width for the slideshow */
+    margin: auto; /* Center the slideshow */
+}
+
+.slides {
+    display: none; /* Hide all images by default */
+    width: 80%; /* Make images responsive */
+    height: 400px; /* Set a fixed height */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+}
+
+.slideshow-container img {
+    width: 80%; /* Ensure images take full width of the container */
+    height: 400px; /* Set a fixed height for all images */
+    object-fit: cover; /* Cover the area while maintaining aspect ratio */
+}
+
+
+/* START OF COURSES */
+
+
+.card-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit card text colors */
+  display: block; /* Make the entire card clickable */
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 0px; /* Space between cards */
+    padding: 20px; /* Padding around the container */
+    justify-content: center; /* Center the grid as a whole */
+    max-width: 1200px; /* Optional: Set a max width for the container */
+    margin: 0 auto; /* Center the container itself */
+}
+.card {
+    background-color: rgba(249, 249, 249, 0.2); /* Adjust the alpha value as needed */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.2s;
+    height: 250px;
+}
+
+.card-image {
+    width: 100%; /* make the image width equal to the card width */
+    height: auto; /* maintain the image aspect ratio */
+    object-fit: cover; /* scale the image to cover the entire card */
+    border-radius: 10px; /* add a slight border radius to the image */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    color: #ffffff;
+}
+
+
+.card-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-button:hover {
+    background-color: #218838;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Make cards full width on smaller screens */
+        margin-bottom: 20px; /* Add some space between stacked cards */
+    }
+}
+
+/* END OF COURSES */
+
+.column1 {
+            flex: 1; /* Each column takes up equal space */
+			margin-left:70px;
+    padding-left: 40px; /* Padding inside columns */
+    box-sizing: border-box; /* Include padding in width calculations */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: flex-start; /* Align items to the start (top) */
+    text-align: left; /* Align text to the left */
+	font-family:MyFont;
+}
+
+/* START OF CONTACT SECTION */
+
+.MessageUs {
+    background-color: gray;
+    padding: 5px; /* Padding inside the div */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 10px auto; /* Center the div with margin */
+    max-width: 1000px; /* Maximum width */
+	height: 450px;
+}
+
+.contact-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem 0;
+  gap: 2rem;
+  background-color: var(--light-color);
+  padding: 2rem;
+  border-radius: var(--border-radius-md);
+}
+
+.contact-section-title {
+  color: black;
+}
+.contact-section-subtitle {
+  font-weight: 500;
+  padding-top: 0.5rem;
+  color: white;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: var(--border-radius-md);
+  width: 700px;
+}
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input-group input {
+  padding: 0.5rem;
+  border-radius: var(--border-radius-md);
+  border: var(--dark-color) solid 1px;
+}
+
+.input-group label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.form-textarea {
+  width: 100%;
+  height: 100px;
+  border-radius: var(--border-radius-md);
+  font-family: "Montserrat", sans-serif;
+  padding: 0.5rem;
+}
+
+.form-button {
+  border-radius: var(--border-radius-md);
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  padding: 0.5rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  transform: var(--scale-sm);
+}
+/* END OF CONTACT SECTION */
+    
+    .footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 5px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<video autoplay loop muted playsinline class="background-video">
+        <source src="videobackground1.mp4" type="video/mp4"> <!-- Replace with your video file -->
+        Your browser does not support the video tag.
+    </video>
+	
+<header>
+<img src="LOGO.png" height=80px" width="auto">
+    <section id="nav">
+	
+	<ul id="navbar">
+        <li><a href="index.html" class="tab">Home</a></li>
+        <li><a href="about.html" class="tab">About Us</a></li>
+        <li><a href="Limited.html" class="tab">Course</a></li>
+        <li><a href="#contact" class="tab">Contact</a></li>
+     
+		</ul>
+		<a href="LogInandSignUpWebTec.html" class="button">Login/SignUp</a>
+    </div>
+</header>
+
+<div class="container">
+    <main>
+        <div class="column">
+            <h2 class="transition-text" style="font-size: 60px; color:white;"><br><br><br><br>"Your Future Starts with DataHub Academy."</h2>
+            <p class="transition-text" style="font-style: italic; font-size: 20px; color:white;">
+                Welcome! We are a passionate group of students dedicated to helping you master the world of databases. Our mission is to deepen your understanding and inspire exploration in this dynamic field. Join us on this journey to enhance your skills and knowledge!
+            </p>
+        </div>
+        <div class="column">
+            <br><br><br><br><br><br><br><br><br><br><img src="https://www.teamdesk.net/img/main-hero.svg" alt="Descriptive Alt Text" class="bouncing-image">
+        </div>
+    </main>
+
+    <!-- Slideshow Section -->
+	<center>
+    <div class="slideshow-container">
+        <div class="slideshow">
+            <img class="slides" src="image1.jpg" alt="Slide 1">
+            <img class="slides" src="image2.jpg" alt="Slide 2">
+            <img class="slides" src="image3.jpg" alt="Slide 3">
+        </div>
+    </div>
+	
+<br><br><br>	
+<p class="intro-italic" style="color: white; text-align: center; font-size: 30px;">
+    "Learn Databases, Unlock Opportunities."
+</p>
+<br><br>
+
+  <h2 class="transition-text" style="font-size: 40px; color:white;">
+    COURSES</h2> </center>
+	
+	 <!-- COURSES -->
+
+<div class="card-container">
+<a href="Limited.html" class="card-link">
+     <div class="card">
+    <img src="int_database.png" alt="Music Sampling" class="card-image">
+    <h3>Introduction to Database</h3>
+    <!-- <button class="card-button">Register Now</button> -->
+  </div>
+	</a>
+<a href="Limited.html" class="card-link">
+    <div class="card">
+    <img src="databasedesign.jpg" alt="Music Sampling" class="card-image">
+    <h3>Database Design Basics</h3>
+    <!-- <button class="card-button">Register Now</button> -->
+</div>
+</a>
+<a href="Limited.html" class="card-link">
+   <div class="card">
+    <img src="sql.jpg" alt="Music Sampling" class="card-image">
+    <h3>SQL Basics</h3>
+    <!-- <button class="card-button">Register Now</button> -->
+</div>
+</a>
+<a href="Limited.html" class="card-link">
+	<div class="card">
+    <img src="acid.png" alt="SQL Commands" class="card-image">
+    <h3>Transaction & ACID Properties</h3>
+    <!-- <button class="card-button">Register Now</button> -->	
+</div>
+</a>
+</div>
+</center>
+
+<center><br><br><br>
+  <a class="courses-link" href="#">Discover more</a>
+    </section>
+
+    <div class="flex-col">
+      <img src="logo.png" alt="alternative logo" class="icon" />
+    </div>
+	<h1 class="intro-italic" style="color: white; text-align: center; font-size: 50px;">
+    Advanced Topics
+</h1>
+		 <!-- ADVANCED COURSES -->
+
+<div class="card-container">
+<a href="Limited.html" class="card-link">
+     <div class="card">
+    <img src="Optimization.jpg" alt="Music Sampling" class="card-image">
+    <h3>Database Optimization & Performance Tuning</h3>
+    <!-- <button class="card-button">Register Now</button> -->
+  </div>
+	</a>
+<a href="Limited.html" class="card-link">
+    <div class="card">
+    <img src="NoSQL.jpg" alt="Music Sampling" class="card-image">
+    <h3>NoSQL Database</h3>
+    <!-- <button class="card-button">Register Now</button> -->
+</div>
+</a>
+<a href="Limited.html" class="card-link">
+   <div class="card">
+    <img src="security.png" alt="Music Sampling" class="card-image">
+    <h3>Database Security</h3>
+    <!-- <button class="card-button">Register Now</button> -->
+</div>
+</a>
+<a href="Limited.html" class="card-link">
+	<div class="card">
+    <img src="scalability.png" alt="SQL Commands" class="card-image">
+    <h3>Database Scalability & Distributed Systems</h3>
+    <!-- <button class="card-button">Register Now</button> -->	
+</div>
+</a>
+</div>
+</center><br><br><br><br><br><br><br><br><br>
+<div class="MessageUs">
+
+    <section class="section-width" id="contact">
+      <div class="contact-section">
+        <div>
+          <h1 class="font-lg contact-section-title">Have a question?</h1>
+          <h3 class="font-md contact-section-subtitle">Send it to us!</h3>
+		    
+        <span>Follow us on social media</span>
+        <div class="social-links">
+          <i class="fa-brands fa-instagram fa-xl"></i>
+          <i class="fa-brands fa-square-twitter fa-xl"></i>
+          <i class="fa-brands fa-square-facebook fa-xl"></i>
+        </div>
+        </div>
+        <form class="form">
+          <div class="input-group">
+
+            <label for="name">Name:</label>
+            <input type="text" placeholder="Your Name" id="name" class="form-input" />
+
+            <label for="email">Email:</label>
+            <input type="email" placeholder="Your Email" id="email" class="form-input" />
+          </div>
+
+          <textarea class="form-textarea" placeholder="Your message"></textarea>
+          <a href="LogInandSignUpWebTec.html" class="button">Send</a>
+        </form>
+      </div>
+    </section>
+
+</div><br><br><br><br><br><br><br><br><br>
+
+    <footer class="footer flex-col">
+      <div>
+        <img src="LOGO.png" height="70px" class="logo" />
+      </div>
+     
+    
+      <div class="copy">&copy;DataHub Academy Team</div>
+ 
+    </footer>
+
+<!-- JavaScript for Slideshow -->
+<script>
+    let slideIndex = 0;
+
+    function showSlides() {
+        const slides = document.getElementsByClassName("slides");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+
+    showSlides(); // Initialize slideshow
+	
+</script>
+
+
+</body>
+</html>

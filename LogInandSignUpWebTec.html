@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up and Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.4);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: #333;
+            font-size: 20px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        input {
+            width: 93%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #4da4f0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-btn:hover {
+            background-color: #1186ed;
+        }
+
+        .link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .link a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+		
+		.background-video {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    z-index: -1; 
+}
+    </style>
+</head>
+<body>
+
+<video autoplay loop muted playsinline class="background-video">
+        <source src="videobackground1.mp4" type="video/mp4"> <!-- Replace with your video file -->
+        Your browser does not support the video tag.
+    </video>
+
+
+    <!-- Sign Up Form -->
+    <div class="form-container" id="signup-form">
+        <button class="close-btn" onclick="closeSignupForm()">✖</button>
+        <h2>Sign Up</h2>
+        <input type="text" id="signup-username" placeholder="Username" required>
+        <input type="password" id="signup-password" placeholder="Password" required>
+        <button class="form-btn" onclick="signup()">Sign Up</button>
+        <div class="link">
+            <p>Already have an account? <a href="#" onclick="showLoginForm()">Log In</a></p>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form-container" id="login-form" style="display: none;">
+        <button class="close-btn" onclick="closeLoginForm()">✖</button>
+        <h2>Log In</h2>
+        <input type="text" id="login-username" placeholder="Username" required>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button class="form-btn" onclick="login()">Log In</button>
+        <div class="link">
+            <p>Don't have an account? <a href="#" onclick="showSignupForm()">Sign Up</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Show the Sign Up Form
+        function showSignupForm() {
+            document.getElementById('signup-form').style.display = 'block';
+            document.getElementById('login-form').style.display = 'none';
+        }
+
+        // Show the Login Form
+        function showLoginForm() {
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('signup-form').style.display = 'none';
+        }
+
+                // Sign Up Function
+        function signup() {
+            var username = document.getElementById('signup-username').value;
+            var password = document.getElementById('signup-password').value;
+
+            if (username && password) {
+                // Store account in localStorage
+                localStorage.setItem('username', username);
+                localStorage.setItem('password', password);
+                alert('Account created successfully!');
+                showLoginForm(); // Automatically show the login form after signup
+            } else {
+                alert('Please enter both username and password.');
+            }
+        }
+
+        // Login Function
+        function login() {
+            var username = document.getElementById('login-username').value;
+            var password = document.getElementById('login-password').value;
+            
+            var storedUsername = localStorage.getItem('username');
+            var storedPassword = localStorage.getItem('password');
+
+            if (username === storedUsername && password === storedPassword) {
+                alert('Login successful!');
+                // Redirect to a different page or dashboard
+                window.location.href = 'AdvanceHomepage.html';  // Example: Redirect to dashboard page
+			  
+            } else {
+                alert('Invalid username or password.');
+            }
+        }
+
+        // Show sign-up form on initial load
+        showSignupForm();
+		
+		function closeSignupForm() {
+    // Close the sign-up form
+    document.getElementById('signup-form').style.display = 'none';
+    // Redirect to the previous page
+    window.history.back();
+}
+
+function closeLoginForm() {
+    // Close the login form
+    document.getElementById('login-form').style.display = 'none';
+    // Redirect to the previous page
+    window.history.back();
+}
+		
+    </script>
+
+</body>
+</html>
